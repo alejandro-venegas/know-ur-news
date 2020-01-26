@@ -1,7 +1,9 @@
-var path = require('path');
+const path = require('path');
 const express = require('express');
 const mockAPIResponse = require('./mockAPI.js');
-
+const aylien = require('aylien_textapi');
+const dotenv = require('dotenv');
+dotenv.config();
 const app = express();
 
 app.use(express.static('dist'));

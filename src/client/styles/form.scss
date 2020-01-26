@@ -1,0 +1,31 @@
+@import 'base';
+form {
+  border: 1px solid #545454;
+  border-radius: 3px;
+  padding: 40px 40px;
+  margin: auto;
+  input {
+    width: 100%;
+    line-height: 16px;
+    margin: 10px 0;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+
+    &::placeholder {
+      color: #d1cece;
+    }
+    padding: 20px 10px;
+
+    &[type='submit'] {
+      background-color: $secondary-color;
+      border: none;
+      color: $white;
+
+      &:hover {
+        box-shadow: 0 0 10px 0 $secondary-color;
+      }
+    }
+  }
+}

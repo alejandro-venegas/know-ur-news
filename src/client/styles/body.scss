@@ -1,0 +1,22 @@
+@import 'base';
+html {
+  background-color: $black;
+}
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: $white;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  margin: 80px auto;
+  article {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+}

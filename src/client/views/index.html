@@ -15,7 +15,8 @@
     <main>
       <article>
         <section>
-          <form class="" onsubmit="return Client.handleSubmit(event)">
+          <form class="">
+            <h2>Type the URL:</h2>
             <input
               id="url"
               pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
@@ -28,12 +29,14 @@
           </form>
         </section>
 
-        <section>
-          <strong>Form Results:</strong>
-          <div id="results"></div>
+        <section id="result">
+          <h2>Analysis:</h2>
+          <div id="polarity">Polarity: <span></span></div>
+          <div id="subjectivity">Subjectivity: <span></span></div>
         </section>
       </article>
     </main>
+    <div id="loader"></div>
 
     <footer>
       <p>This is a footer</p>

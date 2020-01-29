@@ -1,14 +1,24 @@
 const path = require('path');
 const express = require('express');
-const mockAPIResponse = require('./mockAPI.js');
 const aylien = require('aylien_textapi');
+
 const dotenv = require('dotenv');
 dotenv.config();
+
+const bodyParser = require('body-parser');
 const app = express();
 
 app.use(express.static('dist'));
 
+app.use(bodyParser.json());
 console.log(__dirname);
+
+const textApi = new aylien({
+  application_id: process.env.aylien_app_id,
+  application_key: process.env.aylien_api_key
+});
+
+console.log(process.env.aylien_api_key);
 
 app.get('/', function(req, res) {
   res.sendFile('../../dist/index.html');
@@ -19,6 +29,14 @@ app.listen(5000, function() {
   console.log('Example app listening on port 5000!');
 });
 
-app.get('/test', function(req, res) {
-  res.send(mockAPIResponse);
+app.post('/test', function(req, res) {
+  var data;
+  textApi.sentiment(
+    {
+      url: req.body.url
+    },
+    (err, resp) => {
+      res.send(err || resp);
+    }
+  );
 });

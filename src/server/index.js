@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const aylien = require('aylien_textapi');
-
+const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -9,6 +9,8 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(express.static('dist'));
+
+app.use(cors());
 
 app.use(bodyParser.json());
 console.log(__dirname);

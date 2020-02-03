@@ -29,8 +29,7 @@ app.listen(5000, function() {
   console.log('Example app listening on port 5000!');
 });
 
-app.post('/test', function(req, res) {
-  var data;
+app.post('/test', (req, res) => {
   textApi.sentiment(
     {
       url: req.body.url

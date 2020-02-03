@@ -2,8 +2,9 @@
 header {
   display: flex;
   justify-content: space-between;
-  padding: 10px 40px;
+  padding: 40px;
   background-color: $primary-color;
   color: $white;
   box-shadow: 0 0 10px 0px $black;
+  align-content: center;
 }

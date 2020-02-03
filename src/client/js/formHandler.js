@@ -10,9 +10,8 @@ form.addEventListener('submit', event => {
     url: formText
   };
   loader.style = 'display: block';
-  fetch('/test', {
+  fetch('http://localhost:5000/test', {
     method: 'POST',
-    credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -21,6 +20,13 @@ form.addEventListener('submit', event => {
     .then(res => res.json())
     .then(res => {
       Client.responseHandler(res);
+      test = res;
+    })
+    .catch(err => {
+      alert(err);
+      console.log(err);
+    })
+    .finally(() => {
       loader.style = '';
     });
 });

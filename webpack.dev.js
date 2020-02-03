@@ -11,6 +11,15 @@ module.exports = {
   },
   mode: 'development',
   devtool: 'source-map',
+  devServer: {
+    port: 3000,
+    headers: {
+      'Access-Control-Allow-Origin': 'http://localhost:5000',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+      'Access-Control-Allow-Credentials': true
+    }
+  },
   stats: 'verbose',
   module: {
     rules: [
